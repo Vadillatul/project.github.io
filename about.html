@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<style>
+    /* Style table */
+    .jadwalTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .jadwalTable th,
+    .jadwalTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .jadwalTable th {
+        background-color: #f2f2f2;
+    }
+
+    .jadwalTable tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    /* Style lingkaran */
+    .circle {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: 5px;
+        display: inline-block;
+    }
+
+    .beginner .circle {
+        background-color: #f00;
+    }
+
+    .intermediate .circle {
+        background-color: #ff0;
+    }
+
+    .advance .circle {
+        background-color: #0f0;
+    }
+
+    /* Style footer */
+    footer {
+        text-align: center;
+        background-color: #132043;
+        color: #fff;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <!-- INI NAVBAR -->
+    <nav
+        class="bg-gray-200 dark:bg-gray-900 fixed w-full z-2 top-0 start-0 border-b border-gray-300 dark:border-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="asset/image/Artboard 1.png" class="h-20 mr-3 sm:h-12" alt="Ma.Desain Logo">
+                <span
+                    class="self-center text-2xl font-bold whitespace-nowrap text-gray-900 dark:text-white">Ma.Desain</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse p-5">
+                <button type="button"
+                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Hi
+                    User!</button>
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 mt-4 border border-gray-100 rounded-none bg-gray-200 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-gray dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="index.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html"
+                            class="block py-2 px-3 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 md:dark:text-gray-500">About</a>
+                    </li>
+                    <li>
+                        <a href="project.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Project</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- INI CONTENT -->
+    <div class="bg-gray-50 dark:bg-gray-700 mx-auto p-8">
+        <div class="mx-auto p-8">
+            <div class="mx-auto p-8">
+                <h2 class="mb-6 text-4xl font-bold tracking-tight text-gray-900 dark:text-white text-center px-8">
+                    My Profile</h2>
+                <div
+                    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto">
+                    <div class="flex justify-end px-4 pt-4">
+                        <button id="dropdownButton" data-dropdown-toggle="dropdown"
+                            class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+                            type="button">
+                            <span class="sr-only">Open dropdown</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 16 3">
+                                <path
+                                    d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
+                            </svg>
+                        </button>
+
+                    </div>
+                    <div class="flex flex-col items-center pb-10">
+                        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="asset/image/Artboard 2.png"
+                            alt="Bonnie image" />
+                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Vadillatul Ni'ma Maulidya
+                        </h5>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">UI/UX Designer</span>
+                        <div class="flex mx-auto mt-4 md:mt-6 gap-2">
+                            <a href="#"
+                                class="inline-flex items-center px-6 py-2.5 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                                data-drawer-target="drawer-right-note" data-drawer-show="drawer-right-note"
+                                data-drawer-placement="right" aria-controls="drawer-right-note">Note</a>
+                            <a href="#"
+                                class="inline-flex items-center px-3 py-2.5 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-green-700 dark:focus:ring-gray-700 ms-3"
+                                data-drawer-target="drawer-right-message" data-drawer-show="drawer-right-message"
+                                data-drawer-placement="right" aria-controls="drawer-right-message">Message</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INI DRAWER NOTE-->
+        <div id="drawer-right-note"
+            class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 dark:bg-gray-800"
+            tabindex="-1" aria-labelledby="drawer-right-label">
+            <div class="mx-auto gap-4 ">
+                <h5 id="drawer-label"
+                    class="inline-flex items-center mb-6 text-base font-semibold text-green-700 dark:text-gray-400 gap-2">
+                    <svg class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 20 16">
+                        <path
+                            d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                        <path
+                            d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                    </svg>Note
+                </h5>
+
+            </div>
+            <form class="mb-6" action="note.php" method="post">
+                <div class="mb-6">
+                    <label for="Title"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                    <input type="text" id="title" name="title"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                        placeholder="Write your moments" required>
+                </div>
+                <div class="mb-6">
+                    <label for="Description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                        Note</label>
+                    <textarea id="description" name="description" rows="4"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                        placeholder="Description..."></textarea>
+                </div>
+                <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">Use this note to write your experience. Do you have suggestions for development? <a href="contact.html"
+                        class="text-green-600 underline font-medium dark:text-green-500 hover:no-underline">contact
+                        here.</a> Have a nice day!!</p>
+                <div>
+                    <input type="submit" id="note" name="note" value="Save Note"
+                        class="text-white bg-green-700 hover:bg-green-800 w-full focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm text-center px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800 block"></input>
+                    <a href="note.php"
+                        class="items-center px-5 py-2.5 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700 w-full ms-3 mb-2 p-2 block">See
+                        Note</a>
+                </div>
+            </form>
+        </div>
+
+
+        <!-- INI DRAWER MESSAGE-->
+        <div id="drawer-right-message"
+            class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 dark:bg-gray-800"
+            tabindex="-1" aria-labelledby="drawer-right-label">
+            <div class="mx-auto gap-4 ">
+                <h5 id="drawer-label"
+                    class="inline-flex items-center mb-6 text-base font-semibold text-green-700 dark:text-gray-400 gap-2">
+                    <svg class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 20 16">
+                        <path
+                            d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                        <path
+                            d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                    </svg>Message
+                </h5>
+
+            </div>
+            <form class="mb-6" action="message.php" method="post">
+                <div class="mb-6">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                        email</label>
+                    <input type="email" id="email" name="email"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                        placeholder="john.doe@company.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="subject"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Subject</label>
+                    <input type="text" id="subject" name="subject"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                        placeholder="Ask your question in here" required>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                        message</label>
+                    <textarea id="your_message" name="your_message" rows="4"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                        placeholder="Description..."></textarea>
+                </div>
+                <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">You can ask questions or provide constructive
+                    criticism and suggestions, <a href="contact.html"
+                        class="text-green-600 underline font-medium dark:text-green-500 hover:no-underline">contact
+                        us</a>
+                    for more information. We would like to express our gratitude.</p>
+                <div>
+                    <input type="submit" id="send" name="send" value="Send Message"
+                        class="text-white bg-green-700 hover:bg-green-800 w-full focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm text-center px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800 block"></input>
+                    <a href="message.php"
+                        class="items-center px-5 py-2.5 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700 w-full ms-3 mb-2 p-2 block">See
+                        Message</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="text-center mx-auto sm:hidden">
+                <label for="tabs" class="sr-only">Select tab</label>
+                <select id="tabs"
+                    class="bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-sm rounded-t-lg text-green-700 focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                    <option>Profile</option>
+                    <option>Education</option>
+                    <option>Schedule</option>
+                    <option>Activity</option>
+                    <option>Skills</option>
+                    <option>More Information</option>
+                </select>
+            </div>
+            <ul class="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg sm:flex dark:divide-gray-600 dark:text-gray-400 rtl:divide-x-reverse"
+                id="#profil" data-tabs-toggle="#fullWidthTabContent" role="tablist">
+                <li class="w-full">
+                    <button id="profile-tab" data-tabs-target="#profile" type="button" role="tab"
+                        aria-controls="profile" aria-selected="true"
+                        class="inline-block w-full p-4 rounded-ss-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Profile</button>
+                </li>
+                <li class="w-full">
+                    <button id="education-tab" data-tabs-target="#education" type="button" role="tab"
+                        aria-controls="education" aria-selected="false"
+                        class="inline-block w-full p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Education</button>
+                </li>
+                <li class="w-full">
+                    <button id="schedule-tab" data-tabs-target="#schedule" type="button" role="tab"
+                        aria-controls="schedule" aria-selected="false"
+                        class="inline-block w-full p-4 rounded-se-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Schedule</button>
+                </li>
+                <li class="w-full">
+                    <button id="activity-tab" data-tabs-target="#activity" type="button" role="tab"
+                        aria-controls="activity" aria-selected="false"
+                        class="inline-block w-full p-4 rounded-se-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Activity</button>
+                </li>
+                <li class="w-full">
+                    <button id="skills-tab" data-tabs-target="#skills" type="button" role="tab" aria-controls="skills"
+                        aria-selected="false"
+                        class="inline-block w-full p-4 rounded-se-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Skills</button>
+                </li>
+                <li class="w-full">
+                    <button id="moreInformation-tab" data-tabs-target="#moreInformation" type="button" role="tab"
+                        aria-controls="moreInformation" aria-selected="false"
+                        class="inline-block w-full p-4 rounded-se-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">More
+                        Information</button>
+                </li>
+            </ul>
+
+            <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
+                <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="profile" role="tabpanel"
+                    aria-labelledby="profile-tab">
+                    <section id="profile">
+                        <div class="profilContainer">
+                            <div class="profilDetail">
+                                <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                                    Data Diri Saya</h2>
+                                <table>
+                                    <tr>
+                                        <td>Nama Lengkap</td>
+                                        <td>:</td>
+                                        <td>Vadillatul Ni'ma Maulidya</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tempat Tanggal Lahir</td>
+                                        <td>:</td>
+                                        <td>Batu, 10 Mei 2003</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenis Kelamin</td>
+                                        <td>:</td>
+                                        <td>Perempuan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alamat</td>
+                                        <td>:</td>
+                                        <td>Jl. Cempaka, RT.03/RW.05, Pesanggrahan, Batu</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Agama</td>
+                                        <td>:</td>
+                                        <td>Islam</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Status</td>
+                                        <td>:</td>
+                                        <td>Belum Menikah</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kewarganegaraan</td>
+                                        <td>:</td>
+                                        <td>WNI</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br>
+                            <div>
+                                <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                                    Tentang Saya</h2>
+                                <section id="profile">
+                                    <p>Nama saya Vadillatul Nima Maulidya, saya seorang individu yang saat ini sedang
+                                        menempuh pendidikan di
+                                        perguruan tinggi negeri di jurusan
+                                        Matematika. Saya dikenal sebagai seseorang yang memiliki beragam minat dan
+                                        bakat, dengan ketertarikan utama
+                                        dalam dunia seni dan teknologi. Salah satu hobi utama saya adalah menggambar, di
+                                        mana saya mengekspresikan
+                                        kreativitasnya melalui seni visual dan editing. Selain itu, ia juga menulis dan
+                                        memiliki kemampuan dalam
+                                        menyalurkan gagasannya melalui kata-kata.
+                                    </p><br>
+                                    <p> Yang lebih menarik adalah minat saya dalam dunia teknologi, terutama dalam
+                                        bidang kriptanalisis.
+                                        Saya memiliki ketertarikan yang kuat dalam memahami sistem keamanan dan berusaha
+                                        untuk memahami serta
+                                        memecahkan berbagai tantangan kriptografi yang ada. Dengan latar belakang di
+                                        bidang Matematika, Saya
+                                        memiliki
+                                        pemahaman yang mendalam tentang dasar-dasar matematis yang penting dalam
+                                        analisis kriptografi.
+                                    </p><br>
+                                    <p>Secara keseluruhan, Saya adalah individu yang berbakat, kreatif, dan bersemangat
+                                        untuk terus
+                                        belajar dan mengembangkan diri Saya dalam bidang yang Saya cintai, baik dalam
+                                        seni maupun teknologi
+                                        kriptanalisis.
+                                    </p>
+                                </section>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="education" role="tabpanel"
+                    aria-labelledby="education-tab">
+                    <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Pendidikan
+                        Formal</h2>
+                    <section id="education">
+                        <ul>
+                            <li>
+                                <strong>Sekolah Dasar</strong>
+                                <p>MI Bustanul Ulum</p>
+                                <p>2009-2015</p>
+                            </li><br>
+                            <li>
+                                <strong>Sekolah Menengah 1</strong>
+                                <p>SMP Negeri 2 Batu</p>
+                                <p>2015-2018</p>
+                            </li><br>
+                            <li>
+                                <strong>Sekolah Menengah 2</strong>
+                                <p>SMA Negeri 3 Batu</p>
+                                <p>2018-2021</p>
+                            </li><br>
+                            <li>
+                                <strong>Perguruan Tinggi</strong>
+                                <p>UIN Maulana Malik Ibrahim Malang</p>
+                                <p>2021-sekarang</p>
+                            </li>
+                        </ul>
+                        <br>
+
+                        <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Pelatihan
+                            atau Training</h2>
+                        <ul>
+                            <li>
+                                <strong>Bootcamp</strong>
+                                <p>UI/UX Desain</p>
+                            </li><br>
+                            <li>
+                                <strong>Summer School</strong>
+                                <p>INDOMS School Kriptografi</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+
+                <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="schedule" role="tabpanel"
+                    aria-labelledby="schedule">
+                    <section id="chedule">
+                        <table class="jadwalTable">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Hari</th>
+                                    <th>Pukul</th>
+                                    <th>Kelas</th>
+                                    <th>Ruang</th>
+                                    <th>Kode</th>
+                                    <th>Matakuliah</th>
+                                    <th>SKS</th>
+                                    <th>Dosen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Senin</td>
+                                    <td>06.30 - 08.10</td>
+                                    <td>A</td>
+                                    <td>B.208</td>
+                                    <td>1761216</td>
+                                    <td>PEMODELAN MATEMATIKA</td>
+                                    <td>2</td>
+                                    <td>JUHARI, M.Si</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Senin</td>
+                                    <td>09.50-11.30</td>
+                                    <td>D</td>
+                                    <td>B.208</td>
+                                    <td>1761208</td>
+                                    <td>PEMROGRAMAN KOMPUTER II</td>
+                                    <td>2</td>
+                                    <td>MUHAMMAD KHUDZAIFAH,M.Si</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Selasa</td>
+                                    <td>06.30 - 09.00</td>
+                                    <td>B</td>
+                                    <td>Ruang Diskusi</td>
+                                    <td>1761212</td>
+                                    <td>STATISTIKA MATEMATIKA</td>
+                                    <td>3</td>
+                                    <td>ABDUL AZIZ,M.Si</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Selasa</td>
+                                    <td>09.00 - 10.40</td>
+                                    <td>D</td>
+                                    <td>Laboratorium Komputer Dasar</td>
+                                    <td>1761404</td>
+                                    <td>PRAKTIKUM PEMROGRAMAM KOMPUTER II</td>
+                                    <td>1</td>
+                                    <td>M. IZZUN NIAM, MT</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Rabu</td>
+                                    <td>06.30 - 09.00</td>
+                                    <td>C</td>
+                                    <td>B.207</td>
+                                    <td>1761204</td>
+                                    <td>ANALISIS NUMERIK I</td>
+                                    <td>3</td>
+                                    <td>MOHAMMAD NAFIE JAUHARI,M.Si</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Kamis</td>
+                                    <td>06.30 - 09.00</td>
+                                    <td>C</td>
+                                    <td>B.208</td>
+                                    <td>1761303</td>
+                                    <td>ANALISIS KOMPLEKS</td>
+                                    <td>3</td>
+                                    <td>Dr.HAIRUR RAHMAN,M.Si</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Kamis</td>
+                                    <td>09.00 - 10.40</td>
+                                    <td>F</td>
+                                    <td>Lab Pemodelan</td>
+                                    <td>1761406</td>
+                                    <td>PRAKTIKUM PEMODELAN MATEMATIKA</td>
+                                    <td>2</td>
+                                    <td>JUHARI,M.Si</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Kamis</td>
+                                    <td>14.00 - 15.40</td>
+                                    <td>L</td>
+                                    <td>Ruang Diskusi</td>
+                                    <td>1761339</td>
+                                    <td>KAPITA SELEKTA ALJABAR</td>
+                                    <td>2</td>
+                                    <td>MOHAMMAD NAFIE JAUHARI,M.Si</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Jumat</td>
+                                    <td>06.30 - 09.00</td>
+                                    <td>B</td>
+                                    <td>B.208</td>
+                                    <td>1761215</td>
+                                    <td>GEOMETRI ANALITIK</td>
+                                    <td>3</td>
+                                    <td>Dr.HAIRUR RAHMAN,M.Si</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Jumat</td>
+                                    <td>09.50 - 11.30</td>
+                                    <td>A</td>
+                                    <td>Ruang Meeting</td>
+                                    <td>1761338</td>
+                                    <td>ALJABAR LINIER LANJUT</td>
+                                    <td>2</td>
+                                    <td>DEWI ISMIARTI, M.Si</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                </div>
+
+                <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="activity" role="tabpanel"
+                    aria-labelledby="activity">
+                    <section id="aktivity">
+                        <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Pengalaman
+                            Organisasi</h2>
+                        <ul>
+                            <li>
+                                <strong>HMPS "Integral" Matematika (2022)</strong>
+                                <p>Sebagai Anggota</p>
+                            </li><br>
+                            <li>
+                                <strong>HMPS "Integral" Matematika (2023)</strong>
+                                <p>Sebagai Ketua Divisi Penerbitan dan Jurnalistik</p>
+                            </li><br>
+                            <li>
+                                <strong>PMII Rayon Pencerahan Gelileo (2021-2022)</strong>
+                                <p>Sebagai Anggota</p>
+                            </li><br>
+                            <li>
+                                <strong>PMII Rayon Pencerahan Gelileo (2022-2023)</strong>
+                                <p>Sebagai Sekretaris Umum KOPRI</p>
+                            </li><br>
+                            <li>
+                                <strong>PMII Rayon Pencerahan Gelileo (2023-2024)</strong>
+                                <p>Anggota Bidang Eksternal KOPRI</p>
+                            </li><br>
+                        </ul>
+
+                        <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Komunitas
+                        </h2>
+                        <ul>
+                            <li>
+                                <strong>Komunitas "Limit" (2021)</strong>
+                                <p>Sebagai Anggota</p>
+                            </li><br>
+                            <li>
+                                <strong>Komunitas "Limit" (2022)</strong>
+                                <p>Sebagai Ketua Divisi Redaksional</p>
+                            </li><br>
+                            <li>
+                                <strong>Komunitas "Limit" (2023)</strong>
+                                <p>Sebagai Ketua Divisi Multimedia</p>
+                            </li><br>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="skills" role="tabpanel"
+                    aria-labelledby="skills">
+                    <section id="skills">
+                        <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Keahlian
+                        </h2>
+                        <table class="keahlianTable">
+                            <tr>
+                                <td>Microsoft Office</td>
+                                <td class="advance">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Adobe Illustrator</td>
+                                <td class="advance">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Adobe Photoshop</td>
+                                <td class="beginner">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Adobe Premiere</td>
+                                <td class="intermediate">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Figma</td>
+                                <td class="advance">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+
+                </div>
+
+                <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="moreInformation" role="tabpanel"
+                    aria-labelledby="moreInformation">
+                    <section id="moreInformation">
+                        <ul>
+                            <li>
+                                <strong>Website:</strong>
+                                <a href="index.html" target="_blank">www.website.com</a>
+                            </li>
+                            <li>
+                                <strong>Instagram:</strong>
+                                <a href="https://www.instagram.com/vad.llatul" target="_blank">@vad.llatul</a>
+                            </li>
+                            <li>
+                                <strong>Twitter:</strong>
+                                <a href="https://www.x.com/maudy_shim" target="_blank">@maudy_shim</a>
+                            </li>
+                            <li>
+                                <strong>WhatsApp:</strong>
+                                <a href="https://wa.me/6281235096160" target="_blank">+62 812 3509 6160</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INI FOOTER -->
+    <footer class="bg-white dark:bg-gray-900">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400 px-2">© 2023 <a
+                        href="https://flowbite.com/" class="hover:underline">Ma.Desain™</a>. All Rights Reserved.
+                </span>
+                <div class="flex mt-4 sm:justify-center sm:mt-0">
+                    <a class="text-gray-500 hover:text-gray-900 dark:hover:text-white px-2">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 8 19">
+                            <path fill-rule="evenodd"
+                                d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only px-2">Facebook page</span>
+                    </a>
+                    <a href="https://www.x.com/maudy_shim"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 px-2">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 17">
+                            <path fill-rule="evenodd"
+                                d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Twitter page</span>
+                    </a>
+                    <a href="index.html" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 px-2">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Dribbble account</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+
+</html>
